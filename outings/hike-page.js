@@ -1,18 +1,24 @@
-const root = "../../../";
+const root = "../../";
 const photos = [
   ["img_0973.jpg","Cogwheel trains at Schynige Platte"],
+  ["img_0991.jpg","Rocky Alpine hiking trail"],
+  ["img_0992.jpg","Hikers crossing high Alpine terrain"],
   ["img_0994.jpg","Hikers beneath the Bernese Alps"],
+  ["img_1011.jpg","Open walking on the mountain ridge"],
   ["img_1016.jpg","Trail above Interlaken and Lake Thun"],
+  ["img_1021.jpg","Mountain trail overlooking the lakes"],
+  ["img_1022.jpg","Turquoise Lake Brienz from Schynige Platte"],
   ["img_1026.jpg","Lake Brienz from the trail"],
-  ["img_1034.jpg","Stepped section of the route"]
+  ["img_1034.jpg","Stepped section of the route"],
+  ["img_1228.jpg","Historic Schynige Platte railway poster"]
 ];
 const asset = name => `${root}assets/images/outings/schynige-platte/${name}`;
 
 document.querySelector("#prototype").innerHTML = `
   <header class="prototype-nav">
-    <a href="../../../index.html">Brienz Villa</a>
-    <nav aria-label="Design options">
-      ${[1,2,3,4,5].map(n=>`<a ${document.body.dataset.option==n?'aria-current="page"':''} href="../${n}/">0${n}</a>`).join("")}
+    <a href="../../index.html">Brienz Villa</a>
+    <nav aria-label="Page navigation">
+      <a href="../../index.html#explore">Local guide</a>
     </nav>
   </header>
   <main>
@@ -62,7 +68,7 @@ document.querySelector("#prototype").innerHTML = `
       </ol>
     </section>
   </main>
-  <footer><a href="../../../index.html#explore">← Explore outings</a><span>Design option ${document.body.dataset.option} of 5</span></footer>`;
+  <footer><a href="../../index.html#explore">← Explore outings</a><a href="mailto:info@brienzvilla.com">info@brienzvilla.com</a></footer>`;
 
 let current = 0;
 const slides = [...document.querySelectorAll(".slides figure")];

@@ -26,8 +26,7 @@ assets/images/outings/
 
 1. Choose a short lowercase slug, such as `giessbach-falls`.
 2. Copy `outings/schynige-platte/` to `outings/{slug}/`. The finished
-   Schynige Platte page is the current reference design for hikes with route
-   statistics, arrival instructions, a map, GPX file, and photo gallery.
+   Schynige Platte page is the standard compact hike design.
 3. Copy the outing's images to `assets/images/outings/{slug}/`.
 4. Replace every `{{PLACEHOLDER}}` in the copied `index.html`.
 5. Remove the `<meta name="robots" content="noindex">` line.
@@ -37,10 +36,10 @@ assets/images/outings/
 The outing card and detailed page should use the same slug. Set its `page`
 property in `outings.js` to `outings/{slug}/`.
 
-Every hiking page uses the same six-item `.hike-stats` widget in this order:
-distance, duration, ascend, descent, maximum altitude, and minimum altitude.
-Copy the complete widget from `outings/schynige-platte/index.html`; labels remain
-visible and each item includes a hover and keyboard-focus explanation.
+Every hiking page uses the six-item `.stats` widget in this order: distance,
+duration, ascend, descent, maximum altitude, and minimum altitude. Shared
+presentation lives in `hike-page.css`; use `hike-page.js` as the content model
+until pages are generated from a data file.
 
 ## Image conventions
 
