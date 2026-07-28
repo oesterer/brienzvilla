@@ -37,6 +37,11 @@ assets/images/outings/
 The outing card and detailed page should use the same slug. Set its `page`
 property in `outings.js` to `outings/{slug}/`.
 
+Every hiking page uses the same six-item `.hike-stats` widget in this order:
+distance, duration, ascend, descent, maximum altitude, and minimum altitude.
+Copy the complete widget from `outings/schynige-platte/index.html`; labels remain
+visible and each item includes a hover and keyboard-focus explanation.
+
 ## Image conventions
 
 - `hero.jpg`: landscape, ideally 2000 × 1300 pixels or larger.
