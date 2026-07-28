@@ -38,8 +38,8 @@ property in `outings.js` to `outings/{slug}/`.
 
 Every hiking page uses the six-item `.stats` widget in this order: distance,
 duration, ascend, descent, maximum altitude, and minimum altitude. Shared
-presentation lives in `hike-page.css`; use `hike-page.js` as the content model
-until pages are generated from a data file.
+presentation lives in `hike-page.css`, shared rendering lives in
+`hike-page.js`, and each hike supplies its content through its own `data.js`.
 
 ## Image conventions
 
