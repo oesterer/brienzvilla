@@ -42,7 +42,7 @@ document.querySelector("#hike-page").innerHTML = `
 
     <section class="map-section" aria-labelledby="map-heading">
       <div class="section-label"><h2 id="map-heading">Map</h2></div>
-      <a href="${d.mapUrl}" target="_blank" rel="noopener"><img src="${asset("map.jpg")}" alt="Route map for ${d.title}" loading="lazy"></a>
+      <a href="${d.mapUrl}" target="_blank" rel="noopener"><img src="${asset(d.mapFile || "map.jpg")}" alt="Route map for ${d.title}" loading="lazy"></a>
     </section>
 
     <section class="profile-section" aria-labelledby="profile-heading">
