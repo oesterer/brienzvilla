@@ -6,7 +6,7 @@
 .brand img{width:141px;height:99px;object-fit:contain;filter:brightness(0) saturate(100%) invert(22%) sepia(29%) saturate(1713%) hue-rotate(166deg) brightness(91%)}
 .brand span{text-transform:none;font-size:17px;letter-spacing:.1em}
 h1,h2{font-weight:500;letter-spacing:-.045em}
-.hero-shade{background:linear-gradient(90deg,rgba(7,41,70,.72) 0%,rgba(7,41,70,.08) 70%),linear-gradient(0deg,rgba(7,41,70,.58),transparent 50%)}
+.hero-shade{background:linear-gradient(90deg,rgba(7,41,70,.72) 0%,rgba(7,41,70,.08) 20%),linear-gradient(0deg,rgba(7,41,70,.58),transparent 50%)}
 .stays-section{background:#eaf5fb}
 .film-section,footer{background:var(--ink2)}
 .route{background:#e5f2f9}
