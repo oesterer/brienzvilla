@@ -26,6 +26,26 @@ window.EXCURSION_DATA = {
     {
       "file": "photo-05.jpg",
       "alt": "Gruyères excursion, photo 5"
+    },
+    {
+      "file": "photo-06.jpg",
+      "alt": "Gruyères excursion, photo 6"
+    },
+    {
+      "file": "photo-07.jpg",
+      "alt": "Gruyères excursion, photo 7"
+    },
+    {
+      "file": "photo-08.jpg",
+      "alt": "Gruyères excursion, photo 8"
+    },
+    {
+      "file": "photo-09.jpg",
+      "alt": "Gruyères excursion, photo 9"
+    },
+    {
+      "file": "photo-10.jpg",
+      "alt": "Gruyères excursion, photo 10"
     }
   ],
   "directions": [

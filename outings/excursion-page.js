@@ -11,7 +11,7 @@ document.querySelector("#excursion-page").innerHTML = `
     <header class="title-block"><p class="kicker">${d.kicker}</p><h1>${d.title}</h1><div class="description">${d.description.map(p=>`<p>${p}</p>`).join("")}</div></header>
     <section class="slideshow" aria-labelledby="photos-heading">
       <div class="section-label"><h2 id="photos-heading">Pictures</h2><span class="slide-count">1 / ${d.photos.length}</span></div>
-      <div class="slides">${d.photos.map((photo,i)=>`<figure class="${i===0?'active':''}"><img src="${asset(photo.file)}" alt="${photo.alt}" ${i?'loading="lazy"':''}><figcaption>${photo.alt}</figcaption></figure>`).join("")}</div>
+      <div class="slides">${d.photos.map((photo,i)=>`<figure class="${i===0?'active ':''}${photo.fit==='contain'?'contain':''}"><img src="${asset(photo.file)}" alt="${photo.alt}" ${i?'loading="lazy"':''}><figcaption>${photo.alt}</figcaption></figure>`).join("")}</div>
       <div class="slide-buttons"><button class="prev" aria-label="Previous picture">←</button><button class="next" aria-label="Next picture">→</button></div>
     </section>
     <section class="directions" aria-labelledby="directions-heading"><div><p class="kicker">From Brienz Villa</p><h2 id="directions-heading">How to get there and back</h2></div><ol>${d.directions.map((step,i)=>`<li><span>${String(i+1).padStart(2,"0")}</span><p>${step}</p></li>`).join("")}</ol></section>

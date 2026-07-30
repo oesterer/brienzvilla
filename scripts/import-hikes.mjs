@@ -137,7 +137,7 @@ for (const def of definitions) {
   <meta property="og:description" content="${htmlEscape(description)}">
   <meta property="og:image" content="https://brienzvilla.com/assets/images/outings/${def.slug}/${photos[0].file}">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/favicon.svg?v=2" type="image/svg+xml">
   <link rel="stylesheet" href="../hike-page.css"><link rel="stylesheet" href="../site-shell.css">
   <script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"TouristAttraction","name":def.title,"description":description,"url":`https://brienzvilla.com/outings/${def.slug}/`,"image":`https://brienzvilla.com/assets/images/outings/${def.slug}/${photos[0].file}`})}</script>
 </head>

@@ -35,6 +35,7 @@ const definitions = [
   {
     folder:"Gruyeres",slug:"gruyeres-day-trip",title:"Gruyères",
     kicker:"Chocolate, cheese, castle & medieval town",badge:"Best four-in-one day",season:"Year-round",tags:["excursion","family"],
+    heroPhoto:"IMG_1201.heic",
     description:[
       "If you have time, we highly recommend including Gruyères in your tour of Switzerland. It combines four memorable experiences in one day: Maison Cailler’s chocolate experience, La Maison du Gruyère, the medieval town and Gruyères Castle.",
       "Fans of the film Alien can also visit the HR Giger Museum, dedicated to the Swiss artist who designed the film’s iconic creature and visual world."
@@ -83,6 +84,7 @@ const definitions = [
   {
     folder:"RothhornBahn",slug:"brienz-rothorn-railway",title:"Brienz Rothorn Railway",
     kicker:"Historic steam railway · From Brienz",badge:"Best local railway",season:"May–Oct",tags:["excursion","family","local"],
+    containPhotos:["IMG_2602.heic"],
     directions:[
       "Walk from Brienz Villa to the Brienz Rothorn Railway valley station.",
       "Ride the historic cogwheel steam train to Planalp or continue to Rothorn Kulm when the full route is operating.",
@@ -131,12 +133,17 @@ for(const def of definitions){
   const assetDir=path.join(projectRoot,"assets/images/outings",def.slug);
   fs.mkdirSync(assetDir,{recursive:true});
   const sourcePhotos=fs.readdirSync(path.join(sourceDir,"pics")).filter(name=>/\.(heic|jpe?g|png)$/i.test(name)).sort((a,b)=>a.localeCompare(b,undefined,{numeric:true}));
+  if(def.heroPhoto){
+    const heroIndex=sourcePhotos.indexOf(def.heroPhoto);
+    if(heroIndex<0)throw new Error(`${def.folder}: missing hero photo ${def.heroPhoto}`);
+    sourcePhotos.unshift(sourcePhotos.splice(heroIndex,1)[0]);
+  }
   if(!sourcePhotos.length)throw new Error(`${def.folder}: no slideshow pictures`);
   const photos=sourcePhotos.map((name,index)=>{
     const output=`photo-${String(index+1).padStart(2,"0")}.jpg`;
     const result=spawnSync("sips",["-s","format","jpeg","-s","formatOptions","70","-Z","1800",path.join(sourceDir,"pics",name),"--out",path.join(assetDir,output)],{stdio:"ignore"});
     if(result.status!==0)throw new Error(`${def.folder}: failed to convert ${name}`);
-    return {file:output,alt:`${def.title} excursion, photo ${index+1}`};
+    return {file:output,alt:`${def.title} excursion, photo ${index+1}`,...(def.containPhotos?.includes(name)?{fit:"contain"}:{})};
   });
   const data={slug:def.slug,title:def.title,kicker:def.kicker,description,photos,directions,resources:def.resources};
   const pageDir=path.join(projectRoot,"outings",def.slug);
@@ -152,7 +159,7 @@ for(const def of definitions){
   <link rel="canonical" href="https://brienzvilla.com/outings/${def.slug}/"><meta name="theme-color" content="#123f66">
   <meta property="og:type" content="article"><meta property="og:title" content="${escapeHtml(def.title)} | Brienz Villa"><meta property="og:description" content="${escapeHtml(summary)}">
   <meta property="og:image" content="https://brienzvilla.com/assets/images/outings/${def.slug}/${photos[0].file}"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../excursion-page.css"><link rel="stylesheet" href="../site-shell.css">
+  <link rel="icon" href="../../assets/favicon.svg?v=2" type="image/svg+xml"><link rel="stylesheet" href="../excursion-page.css"><link rel="stylesheet" href="../site-shell.css">
   <script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"TouristAttraction","name":def.title,"description":summary,"url":`https://brienzvilla.com/outings/${def.slug}/`,"image":`https://brienzvilla.com/assets/images/outings/${def.slug}/${photos[0].file}`})}</script>
 </head>
 <body><div id="excursion-page"></div><script src="data.js"></script><script src="../excursion-page.js"></script></body>

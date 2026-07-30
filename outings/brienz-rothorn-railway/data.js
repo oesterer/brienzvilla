@@ -28,7 +28,8 @@ window.EXCURSION_DATA = {
     },
     {
       "file": "photo-06.jpg",
-      "alt": "Brienz Rothorn Railway excursion, photo 6"
+      "alt": "Brienz Rothorn Railway excursion, photo 6",
+      "fit": "contain"
     },
     {
       "file": "photo-07.jpg",
