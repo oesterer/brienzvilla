@@ -26,7 +26,7 @@ window.OUTINGS.push(...[
     ],
     "badge": "Best rainy-day plan",
     "season": "Apr–Nov",
-    "image": "assets/images/outings/ballenberg-open-air-museum/photo-01.jpg",
+    "image": "assets/images/outings/ballenberg-open-air-museum/photo-04.jpg",
     "description": "A visit to the Ballenberg, Swiss Open-Air Museum near Brienz offers an immersive journey back in time through the rural history of Switzerland. Spanning 66 hectares of idyllic forested hills and meadows, this unique culture park features over 100 authentic, centuries-old farmhouses, barns, and stables that were carefully dismantled from their original cantons and reconstructed on site. As you wander along the scenic pathways, you can explore the meticulously recreated interiors of these regional architectural gems, stepping directly into the daily lives, kitchens, and living rooms of generations past.",
     "page": "outings/ballenberg-open-air-museum/"
   },

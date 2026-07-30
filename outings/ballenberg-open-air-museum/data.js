@@ -10,6 +10,10 @@ window.EXCURSION_DATA = {
   ],
   "photos": [
     {
+      "file": "photo-04.jpg",
+      "alt": "Historic farmhouses and Alpine landscape at Ballenberg Open-Air Museum"
+    },
+    {
       "file": "photo-01.jpg",
       "alt": "Ballenberg Open-Air Museum excursion, photo 1"
     },
