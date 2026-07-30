@@ -7,6 +7,7 @@ if (!sourceRoot) throw new Error("Usage: node scripts/import-hikes.mjs /path/to/
 
 const projectRoot = path.resolve(import.meta.dirname, "..");
 const definitions = [
+  ["Bachalpsee","first-to-bachalpsee","First to Bachalpsee","High-altitude lake loop · Grindelwald First","Iconic Alpine reflections",2,"Jun–Oct",["hike","family"]],
   ["AxalpStatueLoop","axalp-wooden-statue-loop","Axalp Wooden Statue Loop","Easy mountain loop · Axalp","Our favorite local loop",2,"Jun–Oct",["hike","family","local"]],
   ["AxalpSwing","axalp-giant-swing","Axalp Giant Swing","Chairlift and downhill hike · Axalp","Best panoramic swing",2,"Jun–Oct",["hike","family","local"]],
   ["Bramisegg","bramisegg-to-axalp","Bramisegg to Axalp","Mountain ascent · Close to Brienz","Best quiet valley",3,"Jun–Oct",["hike","local"]],
@@ -29,6 +30,7 @@ const clean = text => text
   .replaceAll("fantastc","fantastic").replaceAll("Northface","North Face")
   .replaceAll("trainstation","train station").replaceAll("busstop","bus stop")
   .replaceAll("Giessbachfalls","Giessbach Falls").replaceAll("Start you hike","Start your hike")
+  .replaceAll("home home","home")
   .replaceAll("facorite","favorite").replaceAll("trough","through")
   .replaceAll("scenial","scenic").replaceAll("Scheiegg","Scheidegg")
   .replaceAll("Allmihubel","Allmendhubel").replaceAll("Roselaui","Rosenlaui")
@@ -61,7 +63,7 @@ function parseDirections(text) {
   return directions;
 }
 function descriptionFrom(text) {
-  const beforeMap = text.split(/Link to Map:/i)[0].trim();
+  const beforeMap = text.split(/(?:Link to Map:|https?:\/\/schweizmobil\.ch\/)/i)[0].trim();
   return clean(beforeMap.split("\n").slice(1).join(" ").replace(/\s+/g," ").trim());
 }
 function write(file, contents) {
@@ -88,7 +90,7 @@ for (const def of definitions) {
     maxAltitude: Number(field(raw,"Max altitude").replace(/[^\d]/g,"")).toLocaleString("en-US") + " m",
     minAltitude: Number(field(raw,"Min altitude").replace(/[^\d]/g,"")).toLocaleString("en-US") + " m"
   };
-  const mapUrl = raw.match(/Link to Map:\s*(https?:\/\/\S+)/i)?.[1];
+  const mapUrl = raw.match(/(?:Link to Map:\s*)?(https?:\/\/schweizmobil\.ch\/\S+)/i)?.[1];
   const description = descriptionFrom(raw);
   const directions = parseDirections(raw);
   const assetDir = path.join(projectRoot,"assets/images/outings",def.slug);
