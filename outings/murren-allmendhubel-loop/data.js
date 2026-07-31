@@ -16,16 +16,16 @@ window.HIKE_DATA = {
   "downloadName": "Murren.gpx",
   "photos": [
     {
+      "file": "photo-03.jpg",
+      "alt": "Mürren & Allmendhubel Loop trail scenery, photo 3"
+    },
+    {
       "file": "photo-01.jpg",
       "alt": "Mürren & Allmendhubel Loop trail scenery, photo 1"
     },
     {
       "file": "photo-02.jpg",
       "alt": "Mürren & Allmendhubel Loop trail scenery, photo 2"
-    },
-    {
-      "file": "photo-03.jpg",
-      "alt": "Mürren & Allmendhubel Loop trail scenery, photo 3"
     },
     {
       "file": "photo-04.jpg",

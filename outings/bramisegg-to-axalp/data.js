@@ -16,12 +16,12 @@ window.HIKE_DATA = {
   "downloadName": "Bramisegg.gpx",
   "photos": [
     {
-      "file": "photo-01.jpg",
-      "alt": "Bramisegg to Axalp trail scenery, photo 1"
-    },
-    {
       "file": "photo-02.jpg",
       "alt": "Bramisegg to Axalp trail scenery, photo 2"
+    },
+    {
+      "file": "photo-01.jpg",
+      "alt": "Bramisegg to Axalp trail scenery, photo 1"
     },
     {
       "file": "photo-03.jpg",
