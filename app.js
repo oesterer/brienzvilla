@@ -1,17 +1,18 @@
 const galleryImages = Array.from({length:38},(_,i)=>`assets/images/villa/villa-${i+1}.jpg`);
 // Start with the Airbnb cover image, then include every listing photo.
 galleryImages.unshift(galleryImages.splice(29,1)[0]);
+galleryImages.splice(1,0,...["1933","2028","2024","2031","0604","2071","2074","2058","2019"].map(number=>`assets/images/villa/house-${number}.jpg`));
 const track=document.querySelector("#gallery-track");
 galleryImages.forEach((src,i)=>{const item=document.createElement("div");item.className="gallery-slide";item.innerHTML=`<img src="${src}" alt="Brienz Villa photo ${i+1} of ${galleryImages.length}" loading="${i<2?"eager":"lazy"}"><span>${String(i+1).padStart(2,"0")} · Brienz Villa</span>`;item.addEventListener("click",()=>openGallery(i));track.append(item)});
 let galleryIndex=0;
 const galleryCount=document.querySelector("#gallery-count");
-function scrollGallery(direction){const slides=[...track.children];galleryIndex=Math.max(0,Math.min(slides.length-1,galleryIndex+direction));slides[galleryIndex].scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});galleryCount.textContent=`${String(galleryIndex+1).padStart(2,"0")} / 38`}
+function scrollGallery(direction){const slides=[...track.children];galleryIndex=Math.max(0,Math.min(slides.length-1,galleryIndex+direction));slides[galleryIndex].scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});galleryCount.textContent=`${String(galleryIndex+1).padStart(2,"0")} / ${galleryImages.length}`}
 document.querySelector("#gallery-prev").onclick=()=>scrollGallery(-1);document.querySelector("#gallery-next").onclick=()=>scrollGallery(1);
-track.addEventListener("scroll",()=>{const slides=[...track.children],center=track.scrollLeft+track.clientWidth/2;let closest=0,d=Infinity;slides.forEach((el,i)=>{const x=el.offsetLeft+el.clientWidth/2;if(Math.abs(center-x)<d){d=Math.abs(center-x);closest=i}});galleryIndex=closest;galleryCount.textContent=`${String(closest+1).padStart(2,"0")} / 38`},{passive:true});
+track.addEventListener("scroll",()=>{const slides=[...track.children],center=track.scrollLeft+track.clientWidth/2;let closest=0,d=Infinity;slides.forEach((el,i)=>{const x=el.offsetLeft+el.clientWidth/2;if(Math.abs(center-x)<d){d=Math.abs(center-x);closest=i}});galleryIndex=closest;galleryCount.textContent=`${String(closest+1).padStart(2,"0")} / ${galleryImages.length}`},{passive:true});
 const galleryDialog=document.querySelector("#gallery-dialog"),dialogImage=document.querySelector("#dialog-image"),dialogCount=document.querySelector("#dialog-count");
-function openGallery(index){galleryIndex=index;dialogImage.src=galleryImages[index];dialogImage.alt=`Brienz Villa photo ${index+1} of 38`;dialogCount.textContent=`${String(index+1).padStart(2,"0")} / 38`;galleryDialog.showModal()}
-function dialogMove(n){galleryIndex=(galleryIndex+n+38)%38;openGalleryImage()}
-function openGalleryImage(){dialogImage.src=galleryImages[galleryIndex];dialogImage.alt=`Brienz Villa photo ${galleryIndex+1} of 38`;dialogCount.textContent=`${String(galleryIndex+1).padStart(2,"0")} / 38`}
+function openGallery(index){galleryIndex=index;dialogImage.src=galleryImages[index];dialogImage.alt=`Brienz Villa photo ${index+1} of ${galleryImages.length}`;dialogCount.textContent=`${String(index+1).padStart(2,"0")} / ${galleryImages.length}`;galleryDialog.showModal()}
+function dialogMove(n){galleryIndex=(galleryIndex+n+galleryImages.length)%galleryImages.length;openGalleryImage()}
+function openGalleryImage(){dialogImage.src=galleryImages[galleryIndex];dialogImage.alt=`Brienz Villa photo ${galleryIndex+1} of ${galleryImages.length}`;dialogCount.textContent=`${String(galleryIndex+1).padStart(2,"0")} / ${galleryImages.length}`}
 document.querySelector("#view-all").onclick=()=>openGallery(0);galleryDialog.querySelector(".dialog-close").onclick=()=>galleryDialog.close();galleryDialog.querySelector(".prev").onclick=()=>dialogMove(-1);galleryDialog.querySelector(".next").onclick=()=>dialogMove(1);
 galleryDialog.addEventListener("click",e=>{if(e.target===galleryDialog)galleryDialog.close()});
 const grid=document.querySelector("#outings-grid"),empty=document.querySelector("#empty-state"),search=document.querySelector("#outing-search"),sort=document.querySelector("#outing-sort"),filters=document.querySelector("#filter-buttons");let activeFilter="all";
