@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Adventures Near Lake Brienz | Hikes & Day Trips</title>
+  <meta name="description" content="Explore Brienz Villa's curated local guide to hikes, mountain railways, lake outings and day trips across the Bernese Oberland, with searchable cards and a sortable hike comparison table.">
+  <link rel="canonical" href="https://brienzvilla.com/local-adventures/">
+  <meta name="theme-color" content="#123f66">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Local Adventures | Brienz Villa">
+  <meta property="og:description" content="Our favorite hikes and outings around Lake Brienz and the Bernese Oberland.">
+  <meta property="og:url" content="https://brienzvilla.com/local-adventures/">
+  <meta property="og:image" content="https://brienzvilla.com/assets/images/villa/home-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg?v=2" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="local-adventures.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="../" aria-label="Brienz Villa home"><img src="../assets/images/brand/brienz-villa-logo.png" alt=""><span>Brienz Villa</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav aria-label="Main navigation"><a href="../#gallery">The villa</a><a href="../#stays">Ways to stay</a><a href="./" aria-current="page">Local Adventures</a><a class="nav-cta" href="../#inquire">Inquire</a></nav>
+  </header>
+
+  <main id="main">
+    <header class="adventures-hero">
+      <p class="eyebrow">From our doorstep</p>
+      <h1>Local<br><em>Adventures.</em></h1>
+      <p>Our personal field notes for unforgettable days around Lake Brienz—easy family outings, scenic railways and high Alpine trails.</p>
+    </header>
+
+    <section class="adventures-catalog section" aria-labelledby="catalog-heading">
+      <div class="catalog-heading"><div><p class="eyebrow">Find your day</p><h2 id="catalog-heading">Hikes & outings</h2></div><p>Search the complete collection or narrow it by the kind of day you have in mind.</p></div>
+      <div class="filters">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="adventure-search" type="search" placeholder="Search adventures" aria-label="Search adventures"></label>
+        <div id="adventure-filters" aria-label="Filter adventures"><button class="active" data-filter="all">All</button><button data-filter="hike">Hikes</button><button data-filter="excursion">Excursions</button><button data-filter="family">Family</button><button data-filter="water">By the water</button><button data-filter="strenuous">Strenuous</button></div>
+        <label class="sort">Sort <select id="adventure-sort" aria-label="Sort adventures"><option value="recommended">Our favorites</option><option value="easy">Easiest first</option><option value="duration">Shortest first</option></select></label>
+      </div>
+      <div class="outings-grid" id="adventures-grid"></div>
+      <p class="empty-state" id="adventures-empty" hidden>No adventures match your search.</p>
+    </section>
+
+    <section class="comparison-section section" aria-labelledby="comparison-heading">
+      <div class="catalog-heading"><div><p class="eyebrow">At a glance</p><h2 id="comparison-heading">Compare all hikes</h2></div><p>Select any column heading to sort the table. Select a hike name to open its complete route guide.</p></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th scope="col"><button data-key="title" aria-sort="none">Hike <span>↕</span></button></th><th scope="col"><button data-key="distanceValue" aria-sort="none">Distance <span>↕</span></button></th><th scope="col"><button data-key="duration" aria-sort="none">Duration <span>↕</span></button></th><th scope="col"><button data-key="ascentValue" aria-sort="none">Ascent <span>↕</span></button></th><th scope="col"><button data-key="difficulty" aria-sort="none">Difficulty <span>↕</span></button></th><th scope="col"><button data-key="season" aria-sort="none">Season <span>↕</span></button></th></tr></thead>
+          <tbody id="hike-comparison"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="../"><img src="../assets/images/brand/brienz-villa-logo.png" alt=""><span>Brienz Villa</span></a><div><a href="mailto:info@brienzvilla.com">info@brienzvilla.com</a></div><div class="footer-links"><a href="./">Local Adventures</a><a href="../units/villa/">Entire villa</a><a href="../units/house/">Upper house</a><a href="https://airbnb.com/h/brienzvilla" target="_blank" rel="noopener">Airbnb ↗</a></div><p class="copyright">© <span id="year"></span> Brienz Villa</p></footer>
+
+  <script src="../outings.js"></script>
+  <script src="../outings/imported-hikes.js"></script>
+  <script src="../outings/imported-excursions.js"></script>
+  <script src="local-adventures.js"></script>
+</body>
+</html>
