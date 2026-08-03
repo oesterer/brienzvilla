@@ -5,7 +5,7 @@ const asset = name => `${root}assets/images/outings/${d.slug}/${name}`;
 document.querySelector("#excursion-page").innerHTML = `
   <header class="site-header">
     <a class="brand" href="../../index.html" aria-label="Brienz Villa home"><img src="../../assets/images/brand/brienz-villa-logo.png" alt=""><span>Brienz Villa</span></a>
-    <nav aria-label="Main navigation"><a href="../../index.html#gallery">The villa</a><a href="../../index.html#stays">Ways to stay</a><a href="../../local-adventures/">Local Adventures</a><a class="nav-cta" href="../../index.html#inquire">Inquire</a></nav>
+    <nav aria-label="Main navigation"><a href="../../index.html#gallery">The villa</a><a href="../../index.html#stays">Ways to stay</a><a href="../../local-adventures/">Local Adventures</a><a href="../../tips/">Tips</a><a class="nav-cta" href="../../index.html#inquire">Inquire</a></nav>
   </header>
   <main>
     <header class="title-block"><p class="kicker">${d.kicker}</p><h1>${d.title}</h1><div class="description">${d.description.map(p=>`<p>${p}</p>`).join("")}</div></header>

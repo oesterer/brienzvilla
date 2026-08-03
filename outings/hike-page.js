@@ -20,6 +20,7 @@ document.querySelector("#hike-page").innerHTML = `
       <a href="../../index.html#gallery">The villa</a>
       <a href="../../index.html#stays">Ways to stay</a>
       <a href="../../local-adventures/">Local Adventures</a>
+      <a href="../../tips/">Tips</a>
       <a class="nav-cta" href="../../index.html#inquire">Inquire</a>
     </nav>
   </header>
