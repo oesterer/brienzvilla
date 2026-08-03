@@ -6,4 +6,23 @@
 .unit-long-copy .house-rules{grid-template-columns:1fr;margin-top:35px}
 .unit-long-copy p{margin-bottom:20px}
 .amenity-head{grid-template-columns:1fr}
+.house-tour{background:#eaf5fb}
+.tour-heading{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:end;margin-bottom:55px}
+.tour-heading p{max-width:480px;margin:0;font-size:14px;line-height:1.75}
+.tour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 18px}
+.tour-card{border:0;padding:0;background:transparent;color:var(--blue);text-align:left;cursor:pointer;font:inherit}
+.tour-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.tour-card span{display:block;padding:16px 2px}
+.tour-card strong{display:block;font-size:18px;margin-bottom:7px}
+.tour-card small{display:block;font-size:11px;line-height:1.55;color:#526c82}
+.tour-dialog{width:100vw;height:100vh;max-width:none;max-height:none;border:0;padding:0;background:#061e33;color:#fff}
+.tour-dialog::backdrop{background:rgba(0,0,0,.88)}
+.tour-dialog figure{height:100%;margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto}
+.tour-dialog figure img{width:100%;height:100%;object-fit:contain}
+.tour-dialog figcaption{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:baseline;padding:20px 7vw 25px}
+.tour-dialog figcaption strong{font-size:18px}.tour-dialog figcaption span{font-size:12px;line-height:1.5}.tour-dialog figcaption small{font-size:11px}
+.tour-close,.tour-arrow{position:fixed;z-index:2;border:1px solid rgba(255,255,255,.45);background:rgba(6,30,51,.78);color:#fff;border-radius:50%;width:46px;height:46px;cursor:pointer}
+.tour-close{right:22px;top:20px;font-size:28px}.tour-arrow{top:50%;transform:translateY(-50%);font-size:18px}.tour-prev{left:22px}.tour-next{right:22px}
 @media(max-width:600px){.unit-long-copy ul{grid-template-columns:1fr}.unit-long-copy>.lead{font-size:18px}}
+@media(max-width:900px){.tour-grid{grid-template-columns:repeat(2,1fr)}.tour-heading{grid-template-columns:1fr;gap:25px}}
+@media(max-width:600px){.tour-grid{grid-template-columns:1fr}.tour-dialog figcaption{grid-template-columns:1fr auto;gap:8px 15px}.tour-dialog figcaption span{grid-column:1/-1;grid-row:2}.tour-arrow{top:auto;bottom:92px}.tour-prev{left:16px}.tour-next{right:16px}}
