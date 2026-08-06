@@ -304,5 +304,22 @@ window.OUTINGS.push(...[
     "route": "From Brienz, take the train to Meiringen → From Meiringen take the bus to Rosenlaui → Exit at Schwarzwaldalp (final stop of this bus) → Hike to Grosse Scheidegg → Enjoy lunch or a snack at the restaurant → To return you have several options: → Continue with the \"Grosse Scheidegg to First\" hike, take the Gondola to Grindelwald and return by train to Brienz. → Take the bus to Grindelwald, explore the town and return by train to Brienz. → Take the bus back to Schwarzwaldalp, then Meiringen. → Hike to Grindelwald",
     "map": "https://schweizmobil.ch/en/tour/2065787092",
     "page": "outings/rosenlaui-to-grosse-scheidegg/"
+  },
+  {
+    "id": "schrattenflue-hangst",
+    "title": "Schrattenflue / Hängst",
+    "type": "hike",
+    "tags": ["hike", "strenuous"],
+    "badge": "Most unique geology",
+    "difficulty": 4,
+    "duration": 3.37,
+    "distance": "6.6 km",
+    "ascent": "719 m",
+    "season": "Jun–Oct",
+    "image": "assets/images/outings/schrattenflue-hangst/photo-01.jpg",
+    "description": "A demanding T2/T3 alpine loop across the extraordinary limestone karst of the UNESCO Biosphere Entlebuch, culminating at the panoramic Hängst summit.",
+    "route": "Drive from Brienz to Alp Schlund via the Brünig Pass and Sörenberg → Continue carefully along the gravel track → Park near the trailhead → Complete the ridge loop to Hängst → Return by car to Brienz",
+    "map": "https://schweizmobil.ch/en/tour/1963421540",
+    "page": "outings/schrattenflue-hangst/"
   }
 ]);

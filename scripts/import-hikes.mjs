@@ -22,6 +22,7 @@ const definitions = [
   ["Murren","murren-allmendhubel-loop","Mürren & Allmendhubel Loop","Alpine meadows · Family favorite","One of our favorites",2,"Jun–Oct",["hike","family"]],
   ["Planalp","brienz-to-planalp","Brienz to Planalp","Uphill workout · From the villa","Best half-day workout",4,"May–Oct",["hike","strenuous","local"]],
   ["Roselaui","rosenlaui-to-grosse-scheidegg","Rosenlaui to Grosse Scheidegg","Alpine valley ascent · Wetterhorn views","Best wild valley",3,"Jun–Oct",["hike"]]
+  ,["Schrattenflue","schrattenflue-hangst","Schrattenflue / Hängst","Demanding karst ridge loop · UNESCO Biosphere Entlebuch","Most unique geology",4,"Jun–Oct",["hike","strenuous"]]
 ].map(([folder,slug,title,kicker,badge,difficulty,season,tags])=>({folder,slug,title,kicker,badge,difficulty,season,tags}));
 
 const clean = text => text
@@ -47,7 +48,7 @@ function parseDuration(value) {
   return { display: `${hours}h ${String(minutes).padStart(2,"0")}m`, hours: +(hours + minutes / 60).toFixed(2) };
 }
 function parseDirections(text) {
-  const raw = text.split(/How to visit:\s*/i)[1]?.split(/Alternative routes:/i)[0] || "";
+  const raw = text.split(/How to visit:\s*/i)[1]?.split(/Alternative routes:|Link to Google Maps/i)[0] || "";
   const lines = clean(raw).split("\n").map(line=>line.trim()).filter(Boolean);
   const directions = [];
   let alternative = false;
@@ -113,6 +114,13 @@ for (const def of definitions) {
     slug:def.slug,title:def.title,kicker:def.kicker,description,stats,mapUrl,
     mapFile:"map.png",downloadName:`${def.folder}.gpx`,photos,directions
   };
+  const driveMapSource = path.join(sourceDir,"drivemap.png");
+  const driveMapUrl = raw.match(/Link to Google Maps[^\n]*\n(https?:\/\/\S+)/i)?.[1];
+  if (fs.existsSync(driveMapSource) && driveMapUrl) {
+    fs.copyFileSync(driveMapSource,path.join(assetDir,"drive-map.png"));
+    data.driveMap="drive-map.png";
+    data.driveMapUrl=driveMapUrl;
+  }
   if (def.folder === "Grutschalp") {
     const altSource = path.join(sourceRoot,"GrutschalpMurren.gpx");
     if (fs.existsSync(altSource)) fs.copyFileSync(altSource,path.join(assetDir,"lower-route.gpx"));

@@ -58,7 +58,10 @@ document.querySelector("#hike-page").innerHTML = `
 
     <section class="directions" aria-labelledby="directions-heading">
       <div><p class="kicker">From Brienz Villa</p><h2 id="directions-heading">How to get there and back</h2></div>
-      <ol>${d.directions.map((step,i)=>`<li><span>${String(i+1).padStart(2,"0")}</span><p>${step}</p></li>`).join("")}</ol>
+      <div class="directions-content">
+        <ol>${d.directions.map((step,i)=>`<li><span>${String(i+1).padStart(2,"0")}</span><p>${step}</p></li>`).join("")}</ol>
+        ${d.driveMap ? `<a class="drive-map" href="${d.driveMapUrl}" target="_blank" rel="noopener"><img src="${asset(d.driveMap)}" alt="Driving map from Brienz Villa to ${d.title}" loading="lazy"><span>Open driving directions ↗</span></a>` : ""}
+      </div>
     </section>
 
     ${d.alternatives?.length ? `<section class="alternatives" aria-labelledby="alternatives-heading">
