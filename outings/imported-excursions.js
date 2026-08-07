@@ -130,5 +130,16 @@ window.OUTINGS.push(...[
     "image": "assets/images/outings/brienz-rothorn-railway/photo-01.jpg",
     "description": "Take the historic cogwheel steam train from Brienz station to the middle section (Planalp) of Mount Rothorn, for gorgeous views to mountains and the lake Brienz, ride back the same way or hike 1.5 hours down to Brienz. Book your seats on their website but purchase the ticket at a reduced price at the counter with your guest card.",
     "page": "outings/brienz-rothorn-railway/"
+  },
+  {
+    "id": "activities-for-kids",
+    "title": "Activities for Kids",
+    "type": "excursion",
+    "tags": ["excursion", "family", "local"],
+    "badge": "Five family favorites",
+    "season": "Apr–Oct",
+    "image": "assets/images/outings/activities-for-kids/photo-01.jpg",
+    "description": "Five family-friendly ideas around Brienz: meet local wildlife, play beside the lake, follow a dwarf trail and discover two spectacular mountain playgrounds.",
+    "page": "outings/activities-for-kids/"
   }
 ]);
