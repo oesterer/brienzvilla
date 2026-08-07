@@ -114,6 +114,11 @@ for (const def of definitions) {
     slug:def.slug,title:def.title,kicker:def.kicker,description,stats,mapUrl,
     mapFile:"map.png",downloadName:`${def.folder}.gpx`,photos,directions
   };
+  if (def.folder === "BrienzRothorn") data.video={
+    id:"nKLoD3FrS0Y",url:"https://www.youtube.com/watch?v=nKLoD3FrS0Y",
+    title:"Wild ibex grazing on top of Brienzer Rothorn",
+    caption:"If you are lucky, you will be able to observe wild ibex grazing on top of Rothorn."
+  };
   const driveMapSource = path.join(sourceDir,"drivemap.png");
   const driveMapUrl = raw.match(/Link to Google Maps[^\n]*\n(https?:\/\/\S+)/i)?.[1];
   if (fs.existsSync(driveMapSource) && driveMapUrl) {

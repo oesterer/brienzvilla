@@ -146,6 +146,11 @@ for(const def of definitions){
     return {file:output,alt:`${def.title} excursion, photo ${index+1}`,...(def.containPhotos?.includes(name)?{fit:"contain"}:{})};
   });
   const data={slug:def.slug,title:def.title,kicker:def.kicker,description,photos,directions,resources:def.resources};
+  if (def.folder === "RothhornBahn") data.video={
+    id:"nKLoD3FrS0Y",url:"https://www.youtube.com/watch?v=nKLoD3FrS0Y",
+    title:"Wild ibex grazing on top of Brienzer Rothorn",
+    caption:"If you are lucky, you will be able to observe wild ibex grazing on top of Rothorn."
+  };
   const pageDir=path.join(projectRoot,"outings",def.slug);
   write(path.join(pageDir,"data.js"),`window.EXCURSION_DATA = ${JSON.stringify(data,null,2)};\n`);
   const summary=description.find(paragraph=>paragraph.length>90) || description[0];

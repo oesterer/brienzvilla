@@ -5,6 +5,12 @@ window.EXCURSION_DATA = {
   "description": [
     "Take the historic cogwheel steam train from Brienz station to the middle section (Planalp) of Mount Rothorn, for gorgeous views to mountains and the lake Brienz, ride back the same way or hike 1.5 hours down to Brienz. Book your seats on their website but purchase the ticket at a reduced price at the counter with your guest card."
   ],
+  "video": {
+    "id": "nKLoD3FrS0Y",
+    "url": "https://www.youtube.com/watch?v=nKLoD3FrS0Y",
+    "title": "Wild ibex grazing on top of Brienzer Rothorn",
+    "caption": "If you are lucky, you will be able to observe wild ibex grazing on top of Rothorn."
+  },
   "photos": [
     {
       "file": "photo-01.jpg",

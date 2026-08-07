@@ -14,6 +14,12 @@ window.HIKE_DATA = {
   "mapUrl": "https://schweizmobil.ch/en/tour/800570378",
   "mapFile": "map.png",
   "downloadName": "BrienzRothorn.gpx",
+  "video": {
+    "id": "nKLoD3FrS0Y",
+    "url": "https://www.youtube.com/watch?v=nKLoD3FrS0Y",
+    "title": "Wild ibex grazing on top of Brienzer Rothorn",
+    "caption": "If you are lucky, you will be able to observe wild ibex grazing on top of Rothorn."
+  },
   "photos": [
     {
       "file": "photo-01.jpg",

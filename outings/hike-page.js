@@ -41,6 +41,8 @@ document.querySelector("#hike-page").innerHTML = `
       <div class="slide-buttons"><button class="prev" aria-label="Previous picture">←</button><button class="next" aria-label="Next picture">→</button></div>
     </section>
 
+    ${d.video ? `<section class="outing-video" aria-labelledby="video-heading"><div class="section-label"><h2 id="video-heading">Video</h2></div><iframe src="https://www.youtube.com/embed/${d.video.id}?rel=0&amp;origin=https%3A%2F%2Fbrienzvilla.com&amp;widget_referrer=https%3A%2F%2Fbrienzvilla.com%2F" title="${d.video.title}" width="1280" height="720" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="origin" allowfullscreen></iframe><p>${d.video.caption}</p><a href="${d.video.url}" target="_blank" rel="noopener">Watch on YouTube ↗</a></section>` : ""}
+
     <section class="map-section" aria-labelledby="map-heading">
       <div class="section-label"><h2 id="map-heading">Map</h2></div>
       <a href="${d.mapUrl}" target="_blank" rel="noopener"><img src="${asset(d.mapFile || "map.jpg")}" alt="Route map for ${d.title}" loading="lazy"></a>
